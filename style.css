@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap'); 
+
 body {
   background-color: #000;
   color: white;
+  font-family: 'Montserrat', sans-serif;
   font-family: sans-serif;
   display: flex;
   flex-direction: column;
@@ -20,12 +23,13 @@ body {
 
 .button {
   display: block;
-  background-color: #131313;
+  background-color: transparent; /* No background */
   color: white;
   padding: 15px 20px;
   text-align: center;
   text-decoration: none;
   border-radius: 5px;
+  border: 3px solid white;
   margin-bottom: 10px;
   width: 80%; 
   max-width: 300px; 
@@ -35,3 +39,9 @@ body {
 .button:hover {
   transform: scale(1.05); /* Scale up on hover */
 }
+
+@media (max-width: 600px) { 
+  .profile-image {
+    width: 100px; 
+    height: 100px;
+  }
