@@ -24,11 +24,11 @@ body {
 .button {
   display: block;
   background-color: transparent; /* No background */
-  color: white;
+  color: #212121;
   padding: 15px 20px;
   text-align: center;
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: 10px;
   border: 3px solid white;
   margin-bottom: 10px;
   width: 80%; 
