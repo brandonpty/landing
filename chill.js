@@ -1,12 +1,10 @@
 const editor = document.getElementById('editor');
 const mensaje = document.getElementById('mensaje');
 const modoBtn = document.getElementById('modo');
+const toolbar = document.querySelector('.toolbar');
 
-editor.addEventListener('click', () => {
-    mensaje.style.display = 'none';
-});
-
-modoBtn.addEventListener('click', () => {
+// Función para alternar el modo
+function toggleModo() {
     document.body.classList.toggle('light-mode');
 
     if (document.body.classList.contains('light-mode')) {
@@ -18,27 +16,33 @@ modoBtn.addEventListener('click', () => {
         editor.style.backgroundColor = '#222';
         editor.style.color = '#eee';
     }
+}
+
+// Event listener para el botón de modo
+modoBtn.addEventListener('click', toggleModo);
+
+// Event listener para la barra de herramientas
+toolbar.addEventListener('click', (event) => {
+    const formato = event.target.dataset.formato;
+    const seleccion = editor.value.substring(editor.selectionStart, editor.selectionEnd);
+
+    switch (formato) {
+        case 'h1':
+            editor.value = editor.value.replace(seleccion, `<h1>${seleccion}</h1>`);
+            break;
+        case 'h2':
+            editor.value = editor.value.replace(seleccion, `<h2>${seleccion}</h2>`);
+            break;
+        case 'p':
+            editor.value = editor.value.replace(seleccion, `<p>${seleccion}</p>`);
+            break;
+        case 'b':
+            editor.value = editor.value.replace(seleccion, `<b>${seleccion}</b>`);
+            break;
+    }
 });
 
-
-const h1Btn = document.getElementById('h1');
-const h2Btn = document.getElementById('h2');
-const textoBtn = document.getElementById('texto');
-const boldBtn = document.getElementById('bold');
-
-h1Btn.addEventListener('click', () => {
-  editor.value += '# ';
-});
-
-h2Btn.addEventListener('click', () => {
-  editor.value += '## ';
-});
-
-textoBtn.addEventListener('click', () => {
-  editor.value += ''; 
-});
-
-boldBtn.addEventListener('click', () => {
-  const seleccion = editor.value.substring(editor.selectionStart, editor.selectionEnd);
-  editor.value = editor.value.replace(seleccion, `**${seleccion}**`);
+// Ocultar el mensaje inicial al hacer clic en el área de texto
+editor.addEventListener('click', () => {
+    mensaje.style.display = 'none';
 });
