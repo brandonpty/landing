@@ -2,12 +2,10 @@ const editor = document.getElementById('editor');
 const mensaje = document.getElementById('mensaje');
 const modoBtn = document.getElementById('modo');
 
-// Ocultar el mensaje inicial al hacer clic en el área de texto
 editor.addEventListener('click', () => {
     mensaje.style.display = 'none';
 });
 
-// Cambiar entre modo oscuro y light
 modoBtn.addEventListener('click', () => {
     document.body.classList.toggle('light-mode');
 
@@ -20,4 +18,27 @@ modoBtn.addEventListener('click', () => {
         editor.style.backgroundColor = '#222';
         editor.style.color = '#eee';
     }
+});
+
+
+const h1Btn = document.getElementById('h1');
+const h2Btn = document.getElementById('h2');
+const textoBtn = document.getElementById('texto');
+const boldBtn = document.getElementById('bold');
+
+h1Btn.addEventListener('click', () => {
+  editor.value += '# ';
+});
+
+h2Btn.addEventListener('click', () => {
+  editor.value += '## ';
+});
+
+textoBtn.addEventListener('click', () => {
+  editor.value += ''; 
+});
+
+boldBtn.addEventListener('click', () => {
+  const seleccion = editor.value.substring(editor.selectionStart, editor.selectionEnd);
+  editor.value = editor.value.replace(seleccion, `**${seleccion}**`);
 });
