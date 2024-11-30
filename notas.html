@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bloc de Notas</title>
-    <link rel="stylesheet" href="color.css">
+    <link rel="stylesheet" href="color.css"> 1 
 </head>
 <body>
     <div class="container">
         <div class="toolbar">
-          <button id="h1">H1</button>
-          <button id="h2">H2</button>
-          <button id="texto">Texto</button>
-          <button id="bold">Negrita</button>
-    </div>
+            <button data-formato="h1">H1</button>
+            <button data-formato="h2">H2</button>
+            <button data-formato="p">Texto</button>
+            <button data-formato="b">Negrita</button>
+        </div>
         <div id="mensaje">ALERTA: al recargar tus notas se borran</div>
         <textarea id="editor"></textarea>
     </div>
