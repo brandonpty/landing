@@ -43,3 +43,19 @@ button {
     border-radius: 5px;
     cursor: pointer;
 }
+
+.toolbar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.toolbar button {
+  margin: 0 5px;
+  padding: 5px 10px;
+  background-color: #555;
+  color: #eee;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
