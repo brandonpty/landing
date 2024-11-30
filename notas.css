@@ -1,12 +1,15 @@
 body {
     font-family: sans-serif;
     display: flex;
-    justify-content: center;
+    flex-direction: column; 
+    justify-content: center; 
     align-items: center;
     min-height: 100vh;
-    background-color: #f0f0f0; /* Modo claro por defecto */
+    background-color: #f0f0f0;
     color: #333;
     transition: background-color 0.3s ease, color 0.3s ease;
+    padding: 20px;
+    box-sizing: border-box; 
 }
 
 .container {
@@ -14,6 +17,8 @@ body {
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 800px;
 }
 
 textarea {
@@ -23,6 +28,7 @@ textarea {
     padding: 10px;
     border: 1px solid #ccc;
     resize: vertical;
+    text-align: left;
 }
 
 body.dark-mode {
