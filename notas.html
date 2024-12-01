@@ -5,14 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bloc de Notas</title>
     <link rel="stylesheet" href="color.css">
-    <script src="https://cdn.tiny.cloud/1/m30o9t9y3k2isuiughgyhtuv0kut1jifufvmmv3jc65m1guq/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
 </head>
 <body>
-    <div class="container">
-        <div id="mensaje">ALERTA: al recargar tus notas se borran</div>
-        <textarea id="editor"></textarea>
+    <h1>Bloc de Notas</h1>
+    <div id="container">
+        <div>
+            <button onclick="document.execCommand('bold', false, null);">Negrita</button>
+            <button onclick="toggleMode()">Cambiar Modo</button>
+        </div>
+        <textarea id="notepad"></textarea>
+        <p style="color: red;">ALERTA: tus notas se borran al recargar la página.</p> 
     </div>
-    <button id="modo">Cambiar a modo light</button>
+
     <script src="chill.js"></script>
 </body>
 </html>
